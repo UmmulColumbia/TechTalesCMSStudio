@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Homepage</title>
-</head>
-<body>
-    {{#each posts}}
-        <div>
-            <h2>{{this.title}}</h2>
-            <p>{{this.content}}</p>
-        </div>
-    {{/each}}
-</body>
-</html>
+<!-- This template extends from the main layout -->
+{{!< main}}
+
+<!-- Content specific to the homepage -->
+<main class="container">
+    <section>
+        <h2>Why MVC is so important</h2>
+        <p>MVC, or Model-View-Controller, is a design pattern that helps in separating the presentation layer from the business logic. It allows developers to manage complex applications more easily by dividing them into three interconnected components.</p>
+    </section>
+
+    <section>
+        <h2>Authentication vs Authorization</h2>
+        <p>Authentication is the process of verifying who a user is, while authorization is the process of verifying what they have access to. These processes are fundamental in security systems to ensure that users can only access the resources they are permitted to.</p>
+    </section>
+
+    <section>
+        <h2>Object-Relational Mapping</h2>
+        <p>Object-Relational Mapping, or ORM, is a technique that converts data between incompatible type systems using object-oriented programming languages. It creates a "virtual object database" that can be used from within the programming language.</p>
+    </section>
+</main>

@@ -1,4 +1,7 @@
-const { Post } = require('../models');
+//const { Post } = require('../models/Post');
+const Post = require('../models/Post');
+
+console.log('Import successful', Post);
 
 const postData = [
   {
