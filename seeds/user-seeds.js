@@ -1,4 +1,5 @@
 const { User } = require('../models/User');
+const bcrypt = require('bcrypt');
 
 const userData = [
   {
@@ -15,9 +16,26 @@ const userData = [
   }
 ];
 
-const seedUsers = () => User.bulkCreate(userData, {
-  individualHooks: true, // This ensures that any model hooks are respected (e.g., password hashing)
-  returning: true,
-});
+// Optionally hash passwords before seeding if not using hooks
+async function hashPasswords(users) {
+  const saltRounds = 10;
+  for (let user of users) {
+    user.password = await bcrypt.hash(user.password, saltRounds);
+  }
+  return users;
+}
+
+const seedUsers = async () => {
+  try {
+    const hashedUsers = await hashPasswords(userData); // Remove this line if using hooks to hash passwords
+    const seededUsers = await User.bulkCreate(hashedUsers, {
+      individualHooks: true, // Use if you have hooks set up for additional operations
+      returning: true,
+    });
+    console.log('Users seeded successfully:', seededUsers);
+  } catch (error) {
+    console.error('Failed to seed users:', error);
+  }
+};
 
 module.exports = seedUsers;

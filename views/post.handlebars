@@ -1,0 +1,29 @@
+{{! views/post.handlebars }}
+{{> header}}
+
+<article>
+    <h1>{{post.title}}</h1>
+    <p>{{post.content}}</p>
+    <footer>
+        Posted by {{post.user.username}} on {{formatDate post.createdAt}}
+    </footer>
+</article>
+
+<section class="comments">
+    <h2>Comments</h2>
+    {{#each post.comments as |comment|}}
+    <div class="comment">
+        <p>{{comment.text}}</p>
+        <small>— {{comment.user.username}}</small>
+    </div>
+    {{/each}}
+    {{#if logged_in}}
+    <form action="/comments" method="POST">
+        <textarea name="text" placeholder="Leave a comment..."></textarea>
+        <input type="hidden" name="postId" value="{{post.id}}">
+        <button type="submit">Submit</button>
+    </form>
+    {{/if}}
+</section>
+
+{{> footer}}

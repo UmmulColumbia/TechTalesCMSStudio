@@ -1,4 +1,4 @@
-/* Basic reset */
+/* Basic reset to remove margins, padding, and set box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -6,82 +6,73 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
+    font-family: 'Arial', sans-serif; /* Ensures the font is consistent */
+    background-color: #f4f4f4; /* A light grey background for the page */
+    color: #333; /* Dark grey color for text for readability */
+    line-height: 1.6; /* Spacing out lines of text */
 }
 
 header {
-    background-color: #007bff;
+    background-color: #007bff; /* A nice blue for the header background */
     color: #ffffff;
     padding: 10px 20px;
     text-align: center;
 }
 
-header nav {
-    margin-top: 10px;
+header a {
+    color: #ffffff; /* Ensures links are white in the header */
+    text-decoration: none; /* Removes underline from links */
 }
 
-header nav ul {
-    list-style: none;
+nav ul {
+    list-style-type: none; /* Removes bullet points from list items */
+    padding: 0;
 }
 
-header nav ul li {
-    display: inline;
+nav ul li {
+    display: inline; /* Display list items inline */
     margin-right: 10px;
 }
 
-header nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
+main {
+    max-width: 960px; /* Maximum width of the content */
+    margin: 20px auto; /* Centering the main content horizontally */
+    padding: 20px;
+    background: white; /* White background for the content */
+    border: 1px solid #ccc; /* Subtle border around the main content */
 }
 
 footer {
+    text-align: center; /* Center-align text */
+    padding: 10px 0;
     background-color: #333;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 20px;
+    color: white;
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* Card-like sections */
-section {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin-top: 20px;
-}
-
 /* Responsive typography */
-h1, h2, h3, h4, h5, h6 {
-    color: #333;
+h1, h2, h3, h4 {
+    line-height: 1.2;
 }
 
 h1 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
+    font-size: 2.5rem; /* Large font size for h1 */
 }
 
 h2 {
-    font-size: 1.5em;
-    margin-bottom: 0.75em;
+    font-size: 2rem; /* Smaller font size for h2 */
 }
 
-/* Button styling */
-button, .button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px 0;
+/* Adding some padding around buttons and input fields for better touch interaction */
+button, input[type="submit"], input[type="text"], input[type="password"] {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* Styling buttons to match the header */
+button, input[type="submit"] {
     background-color: #007bff;
     color: white;
     border: none;
@@ -89,38 +80,6 @@ button, .button {
     cursor: pointer;
 }
 
-button:hover, .button:hover {
-    background-color: #0056b3;
-}
-
-/* Input styling */
-input[type="text"], input[type="password"], textarea {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #218838;
-}
-
-/* Utility classes */
-.text-center {
-    text-align: center;
-}
-
-.margin-top {
-    margin-top: 20px;
+button:hover, input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover for better user feedback */
 }
