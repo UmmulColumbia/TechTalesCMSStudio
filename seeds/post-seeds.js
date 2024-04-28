@@ -1,5 +1,5 @@
-const { Post } = require('../models/Post'); // Corrected to import using destructuring if you are exporting models in a bundled manner
-
+//const { Post } = require('../models/Post'); // Corrected to import using destructuring if you are exporting models in a bundled manner
+const { Post } = require('../models'); 
 const postData = [
   {
     title: 'Why MVC is Essential for Developers',

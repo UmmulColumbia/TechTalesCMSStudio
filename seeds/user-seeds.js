@@ -1,4 +1,7 @@
-const { User } = require('../models/User');
+//const { User } = require('../models/User');
+// Correcting the import in the seeding script, e.g., user-seeds.js
+const { User } = require('../models');
+
 const bcrypt = require('bcrypt');
 
 const userData = [
