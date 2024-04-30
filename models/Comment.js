@@ -23,8 +23,9 @@ module.exports = (sequelize) => {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {
-                    model: 'user',  // Reference to the User model using its model name
-                    key: 'id'
+                   // model: 'user',  // Reference to the User model using its model name
+                   model:  'userDetails',
+                   key: 'id'
                 }
             },
             postId: {

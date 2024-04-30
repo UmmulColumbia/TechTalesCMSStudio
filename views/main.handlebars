@@ -12,13 +12,10 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                {{#if logged_in}}
                 <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/logout" id="logoutButton">Logout</a></li>
-                {{else}}
                 <li><a href="/login">Login</a></li>
-                <li><a href="/signup">Sign Up</a></li>
-                {{/if}}
+                <li><a href="/signup">SignUp</a></li>
+                <li><a href="/logout" id="logout-link">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -30,8 +27,6 @@
     <footer>
         <p>© 2023 The Tech Blog. All rights reserved.</p>
     </footer>
-
-    <!-- Link to your main JavaScript file, adjust path as necessary -->
-    <script src="/js/main.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>

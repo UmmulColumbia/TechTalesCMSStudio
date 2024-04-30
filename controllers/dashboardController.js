@@ -4,32 +4,23 @@ const { Post, User, Comment } = require('../models');
 
 // Middleware to check if the user is logged in
 function isAuthenticated(req, res, next) {
-    if (!req.session.logged_in) {
+    if (!req.session.loggedIn) {
         res.redirect('/login');
     } else {
-        next();
+       next();
     }
 }
+router.get('/', (req, res) => {
+    res.render('dashboard');
+});
 
-// GET Dashboard page
-router.get('/dashboard', isAuthenticated, async (req, res) => {
-    try {
-        // Assuming you have a User model and each user has many posts
-        const userData = await User.findByPk(req.session.user_id, {
-            include: [{ model: Post, include: [Comment] }] // Including posts and their comments
-        });
-
-        const user = userData.get({ plain: true });
-
-        res.render('dashboard', {
-            user,
-            posts: user.posts,
-            logged_in: req.session.logged_in
-        });
-    } catch (error) {
-        console.error('Error accessing dashboard:', error);
-        res.status(500).send('Error accessing the dashboard');
-    }
+// GET form for creating a new post
+router.get('/posts/new', isAuthenticated, (req, res) => {
+    res.render('new_post_form'); // Render form to create a new post
 });
 
 module.exports = router;
+
+
+
+         

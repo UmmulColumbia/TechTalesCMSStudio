@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 // Post a new comment
 router.post('/', withAuth, async (req, res) => {
     try {
-        // Check if the request includes all necessary data
+       
         if (!req.body.text || !req.body.postId) {
             return res.status(400).json({ message: 'Text and Post ID are required for a comment' });
         }

@@ -27,11 +27,16 @@
         <p>You have no posts yet.</p>
         {{/if}}
 
-        <a href="/posts/new">Create New Post</a>
-    </main>
+       <!-- <a href="/posts/new">Create New Post</a>-->
+        <form id="new-post-form" action="/posts/create" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
 
-    <footer>
-        <p>Copyright &copy; Your Company, Year</p>
-    </footer>
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" required></textarea>
+
+    <button type="submit">Create Post</button>
+</form>
+    </main>
 </body>
 </html>

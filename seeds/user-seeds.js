@@ -18,27 +18,42 @@ const userData = [
     password: 'password123'
   }
 ];
-
-// Optionally hash passwords before seeding if not using hooks
-async function hashPasswords(users) {
-  const saltRounds = 10;
-  for (let user of users) {
-    user.password = await bcrypt.hash(user.password, saltRounds);
-  }
-  return users;
-}
-
+//new code
 const seedUsers = async () => {
   try {
-    const hashedUsers = await hashPasswords(userData); // Remove this line if using hooks to hash passwords
-    const seededUsers = await User.bulkCreate(hashedUsers, {
-      individualHooks: true, // Use if you have hooks set up for additional operations
+    // Directly seed users, relying on model hooks to handle hashing
+    const seededUsers = await User.bulkCreate(userData, {
+      individualHooks: true,  // Ensures hooks like `beforeCreate` are triggered
       returning: true,
     });
-    console.log('Users seeded successfully:', seededUsers);
+
+    console.log('Users seeded successfully:', seededUsers.map(user => user.get({ plain: true })));
   } catch (error) {
     console.error('Failed to seed users:', error);
   }
 };
+
+
+// Optionally hash passwords before seeding if not using hooks
+//async function hashPasswords(users) {
+ // const saltRounds = 10;
+ // for (let user of users) {
+   // user.password = await bcrypt.hash(user.password, saltRounds);
+ // }
+  //return users;
+//}
+
+//const seedUsers = async () => {
+  //try {
+    //const hashedUsers = await hashPasswords(userData); // Remove this line if using hooks to hash passwords
+    //const seededUsers = await User.bulkCreate(hashedUsers, {
+     // individualHooks: true, // Use if you have hooks set up for additional operations
+     // returning: true,
+    //});
+    //console.log('Users seeded successfully:', seededUsers);
+ // } catch (error) {
+   // console.error('Failed to seed users:', error);
+  //}
+//};
 
 module.exports = seedUsers;

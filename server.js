@@ -8,7 +8,7 @@ const db = require('./config/connection');
 const { User, Post, Comment } = require('./models');
 
 const app = express();
-const PORT = process.env.PORT || 3007;
+const PORT = process.env.PORT || 3026;
 // Setup Handlebars with custom helpers
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
@@ -61,7 +61,7 @@ app.get('/', async (req, res) => {
       const postList = posts.map(post => post.get({ plain: true }));
       res.render('homepage', {
           posts: postList,
-          logged_in: req.session.logged_in || false
+          logged_in: req.session.loggedIn || false
       });
   } catch (error) {
       console.error('Error fetching posts:', error);
@@ -79,7 +79,9 @@ app.use('/', userRoutes);
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 app.use('/comments', commentRoutes);
-app.use('/', dashboardRoutes);
+app.use('/dashboard', dashboardRoutes);
+
+
 // Sync database and start the server
 db.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

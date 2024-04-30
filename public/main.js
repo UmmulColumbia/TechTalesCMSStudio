@@ -58,19 +58,31 @@ function displayLoginError(message) {
     errorDiv.style.display = 'block'; 
 }
 // Handling logout functionality
-const logoutButton = document.getElementById('logoutButton');
-if (logoutButton) {
-    logoutButton.addEventListener('click', async () => {
-        try {
-            const response = await fetch('/logout', { method: 'POST' });
-            if (response.ok) {
-                console.log('Logged out successfully');
-                window.location.href = '/login';  // Redirect to login page after logout
-            } else {
-                console.error('Failed to log out');
-            }
-        } catch (error) {
-            console.error('Error logging out:', error);
-        }
-    });
-}
+
+document.getElementById('logout-link').addEventListener('click', async () => {
+    const response = await fetch('/logout', { method: 'POST' });
+    if (response.ok) {
+        window.location.replace('/');
+       // window.location.href = '/login';
+        console.log('Logged out successfully');
+    } else {
+        console.error('Logout failed:', await response.text());
+    }
+});
+
+//const logoutButton = document.getElementById('logout-link');
+//if (logoutButton) {
+    //logoutButton.addEventListener('click', async () => {
+       // try {
+           // const response = await fetch('/logout', { method: 'POST' });
+           // if (response.ok) {
+                //console.log('Logged out successfully');
+              //  window.location.href = '/login';  // Redirect to login page after logout
+           // } else {
+             //   console.error('Failed to log out');
+           // }
+      //  } catch (error) {
+          //  console.error('Error logging out:', error);
+      //  }
+   // });
+//}

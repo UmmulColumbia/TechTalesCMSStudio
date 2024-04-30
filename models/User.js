@@ -27,14 +27,21 @@ module.exports = (sequelize) => {
     }, {
         sequelize,
         freezeTableName: true,
-        modelName: 'user',
+       // modelName: 'user',
+        modelName: 'userDetails',
         
-        hooks: {
-            beforeCreate: async (user) => {
-                user.password = await bcrypt.hash(user.password, 10);
-            }
+       // hooks: {
+           // beforeCreate: async (user) => {
+               // user.password = await bcrypt.hash(user.password, 10);
+           // },
+           // beforeUpdate: async (user) => {
+               // if (user.changed('password')) {
+                  //  user.password = await bcrypt.hash(user.password, 10);
+              //  }
+           // }
+       // }
         }
-    });
+    );
 
     return User;
 }

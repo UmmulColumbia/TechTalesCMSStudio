@@ -58,19 +58,32 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+// POST route for creating a new post
+//router.post('/create', isAuthenticated, async (req, res) => {
+   // try {
+       // const { title, content } = req.body;
+
+       // await Post.create({ title, content, userId: req.session.userId });
+
+      //  res.redirect('/dashboard'); // Redirect to dashboard or appropriate path
+   // } catch (error) {
+       // console.error('Error creating post:', error);
+       // res.status(500).send('Error creating post');
+    //}
+//});
 
 // Create new post
-router.post('/', async (req, res) => {
-    try {
-        const newPost = await Post.create({
-            ...req.body,
-            userId: req.session.userId  
-        });
-        res.status(201).json(newPost);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
+//router.post('/', async (req, res) => {
+   // try {
+       // const newPost = await Post.create({
+          //  ...req.body,
+          //  userId: req.session.userId  
+       // });
+       // res.status(201).json(newPost);
+   // } catch (err) {
+       // res.status(400).json(err);
+   // }
+//});
 
 // Update post
 router.put('/:id', async (req, res) => {

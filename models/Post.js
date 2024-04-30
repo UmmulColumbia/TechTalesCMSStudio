@@ -23,7 +23,9 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'user',  // Ensure the table name is correct; this should match the table name exactly if you have custom settings like `freezeTableName: true`
+               
+                model:  'userDetails',
+                // model: 'user',  // Ensure the table name is correct; this should match the table name exactly if you have custom settings like `freezeTableName: true`
                 key: 'id'
             }
         }
