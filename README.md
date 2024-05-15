@@ -33,6 +33,12 @@ Create a .env file in the root directory with the following content:
 - DB_PW='your_password'
 - SESSION_SECRET='your_secret'
 
+## Credit
+This project was created by Ummul Mukta to demonstrate skills to build an application utilizing Handlebars.js for dynamic views, Sequelize as the ORM, and express-session.
+
+## License
+This project is licensed under the MIT License.
+
 ## Closing Thoughts
 
 Thank you for visiting the TechTalesCMSStudio.Hope this platform serves as a valuable tool for sharing your technical knowledge and experiences. Whether you're here to find insights or contribute, your participation helps nurture a diverse and informative tech community. I look forward to seeing your contributions and encourage you to reach out with any suggestions or feedback to continually improve this community-driven project.
