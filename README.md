@@ -28,7 +28,7 @@ Welcome to the TechTales CMSS tudio, a CMS-style platform built from scratch whe
 To run the application, you need to set up the environment variables and start the server:
 
 Create a .env file in the root directory with the following content:
-- DB_NAME='tech_blog_db'
+- DB_NAME='techblog_db'
 - DB_USER='your_username'
 - DB_PW='your_password'
 - SESSION_SECRET='your_secret'
