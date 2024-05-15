@@ -1,17 +1,11 @@
 const router = require('express').Router();
 
-// Import routers
-const userRoutes = require('./userRoutes');
-//const postRoutes = require('./PostRoutes');
-const protectedRoutes = require('./protectedRoutes'); 
-const commentRoutes = require('./comment'); 
+const homeRoutes = require('./homeRoutes');
+const apiRoutes = require('./api/');
+const dashboardRoutes = require('./dashboardRoutes');
 
-
-// Setup routes
-router.use('/users', userRoutes);
-//router.use('/posts', postRoutes);
-router.use('/comment', commentRoutes);
-router.use('/posts', protectedRoutes);
-// More route uses if you have additional routers
+router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
+router.use('/dashboard', dashboardRoutes);
 
 module.exports = router;
