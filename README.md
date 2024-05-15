@@ -33,6 +33,16 @@ Create a .env file in the root directory with the following content:
 - DB_PW='your_password'
 - SESSION_SECRET='your_secret'
 
+## Screenshot
+![image](https://github.com/UmmulColumbia/TechTalesCMSStudio/assets/156148729/13819cfe-ff4c-479c-8062-875244d5e40d)
+
+![image](https://github.com/UmmulColumbia/TechTalesCMSStudio/assets/156148729/b442c88e-fb4d-4613-b9c0-3f01e293a395)
+
+![image](https://github.com/UmmulColumbia/TechTalesCMSStudio/assets/156148729/cf6d08a8-3303-4c18-8237-389c09278556)
+
+
+
+
 ## Credit
 This project was created by Ummul Mukta to demonstrate skills to build an application utilizing Handlebars.js for dynamic views, Sequelize as the ORM, and express-session.
 
