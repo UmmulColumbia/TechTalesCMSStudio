@@ -1,15 +1,22 @@
 [
-    {
-      "title": "Music Near Me",
-      "body": "A mobile app that will send you notifications whenever a concert is playing in your area."
-    },
-    {
-      "title": "The Ultimate Tech Quiz",
-      "body": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
-    },
-    {
-      "title": "Roll 'Em Up",
-      "body": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
-    }
-  ]
-  
+  {
+    "title": "Exploring the World of Microservices",
+    "body": "Dive into the architecture that’s shaping modern app development. This post covers the basics of microservices, their advantages over monolithic architectures, and how companies are leveraging them for better scalability and resilience."
+  },
+  {
+    "title": "What's New in Web Security?",
+    "body": "Stay updated with the latest security protocols and measures essential for safeguarding your web applications. From new encryption standards to innovative authentication methods, learn how to protect your data in an increasingly connected world."
+  },
+  {
+    "title": "AI and Machine Learning: Trends to Watch",
+    "body": "Explore the current trends in AI and machine learning, including advancements in neural networks, deep learning technologies, and real-world applications that are transforming industries."
+  },
+  {
+    "title": "The Rise of Quantum Computing",
+    "body": "Quantum computing is poised to revolutionize technology by solving complex problems faster than traditional computers. This post discusses the principles of quantum computing, its potential applications, and how it could change the future of computing."
+  },
+  {
+    "title": "Effective Debugging Techniques for Developers",
+    "body": "Debugging is an essential skill for any developer. Learn about various debugging techniques and tools that can help you efficiently identify and fix errors in your code."
+  }
+]
