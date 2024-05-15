@@ -34,6 +34,11 @@ Create a .env file in the root directory with the following content:
 - SESSION_SECRET='your_secret'
 
 ## Screenshot
+
+#### url:
+
+https://techtalescmsstudio-1.onrender.com
+
 ![image](https://github.com/UmmulColumbia/TechTalesCMSStudio/assets/156148729/13819cfe-ff4c-479c-8062-875244d5e40d)
 
 ![image](https://github.com/UmmulColumbia/TechTalesCMSStudio/assets/156148729/b442c88e-fb4d-4613-b9c0-3f01e293a395)
